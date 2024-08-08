@@ -3,7 +3,7 @@ import { ADD_TO_CART, REMOVE_CART_ITEM, SAVE_SHIPPING_INFO } from "../Constant/c
 
 export const addItemToCart = (id, quantity) => async (dispatch, getState) => {
 
-    const { data } = await axios.get(`http://localhost:5000/api/v1/book/${id}`)
+    const { data } = await axios.get(`https://book-store-server-iota.vercel.app/api/v1/book/${id}`)
     
     dispatch({
         type: ADD_TO_CART,

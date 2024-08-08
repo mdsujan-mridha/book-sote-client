@@ -1,6 +1,5 @@
 import { Fragment, useEffect, useState, } from 'react';
 import './App.css';
-
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from './components/Home/Home';
 import Navbar from './components/Layout/Navbar';
@@ -53,7 +52,7 @@ function App() {
   const [stripeApiKey, setStripeApiKey] = useState("");
 
   async function getStripeApiKey() {
-    const { data } = await axios.get("http://localhost:5000/api/v1/stripeapikey");
+    const { data } = await axios.get("https://book-store-server-iota.vercel.app/api/v1/stripeapikey");
     setStripeApiKey(data.stripeApiKey);
   }
   // console.log(stripeApiKey);
@@ -75,15 +74,16 @@ function App() {
           <Route path='/contact' element={<Contact />}></Route>
           {/* it will protected  */}
           <Route path='/book/request' element={<Books />}></Route>
-          <Route path='/book/request/:id' element={<RequestBookDetails />}></Route>
+
           {/* it will protected  */}
           <Route path='/book/exchnage' element={<ExChangeBooks />}></Route>
           <Route path='/sell/books' element={<BuyBooks />}></Route>
-          <Route path='/sell/books/:id' element={<BookDetails />}></Route>
-          <Route path='/exchange/books/:id' element={<BookDetailsModal />}></Route>
           <Route path='/cashier/dashboard' element={<CashierDashboard />}></Route>
           {/* protected route  user*/}
           <Route element={<ProtectedRoute isAuthenticated={isAuthenticated} />}>
+            <Route path='/sell/books/:id' element={<BookDetails />}></Route>
+            <Route path='/exchange/books/:id' element={<BookDetailsModal />}></Route>
+            <Route path='/book/request/:id' element={<RequestBookDetails />}></Route>
             <Route path='/account' element={<Profile />} ></Route>
             <Route path='/cart' element={<Cart />}></Route>
             <Route path='/shipping' element={<Shipping />}></Route>

@@ -23,7 +23,7 @@ export const getAllRequestBooks = () => async (dispatch) => {
         dispatch({
             type: ALL_REQUEST_BOOK_REQUEST
         })
-        const { data } = await axios.get(`http://localhost:5000/api/v1/request/books`)
+        const { data } = await axios.get(`https://book-store-server-iota.vercel.app/api/v1/request/books`)
         dispatch({
             type: ALL_REQUEST_BOOK_SUCCESS,
             payload: data
@@ -42,7 +42,7 @@ export const postNewBookRequest = (BookRequestData) => async (dispatch) => {
 
         dispatch({ type: NEW_REQUEST_BOOK_REQUEST })
         // console.log(sellBookData)
-        const data = await axios.post(`http://localhost:5000/api/v1/request/book`, BookRequestData)
+        const data = await axios.post(`https://book-store-server-iota.vercel.app/api/v1/request/book`, BookRequestData)
         dispatch({
             type: NEW_REQUEST_BOOK_SUCCESS,
             payload: data
@@ -60,7 +60,7 @@ export const getSingleRequestBookDetails = (id) => async (dispatch) => {
         dispatch({
             type: NEW_REQUEST_DETAILS_REQUEST
         })
-        const { data } = await axios.get(`http://localhost:5000/api/v1/request/book/${id}`)
+        const { data } = await axios.get(`https://book-store-server-iota.vercel.app/api/v1/request/book/${id}`)
         dispatch({
             type: NEW_REQUEST_DETAILS_SUCCESS,
             payload: data.requestBook,
@@ -81,7 +81,7 @@ export const getAdminRequestBook = () => async (dispatch) => {
 
     try {
         dispatch({ type: ADMIN_REQUEST_BOOK_REQUEST })
-        const { data } = await axios.get(`http://localhost:5000/api/v1/admin/request/books`)
+        const { data } = await axios.get(`https://book-store-server-iota.vercel.app/api/v1/admin/request/books`)
         dispatch({
             type: ADMIN_REQUEST_BOOK_SUCCESS,
             payload: data.requestBook,
@@ -103,7 +103,7 @@ export const deleteRequestBook = (id) => async (dispatch) => {
         dispatch({
             type: DELETE_REQUEST_BOOK_REQUEST
         })
-        const { data } = await axios.delete(`http://localhost:5000/api/v1/request/book/${id}`)
+        const { data } = await axios.delete(`https://book-store-server-iota.vercel.app/api/v1/request/book/${id}`)
         dispatch({
             type: DELETE_REQUEST_BOOK_SUCCESS,
             payload: data.success

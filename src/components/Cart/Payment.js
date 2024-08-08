@@ -53,7 +53,7 @@ const Payment = ({ stripeApiKey }) => {
                 },
             };
             const { data } = await axios.post(
-                "http://localhost:5000/api/v1/payment/process",
+                "https://book-store-server-iota.vercel.app/api/v1/payment/process",
                 paymentData,
                 config
             );

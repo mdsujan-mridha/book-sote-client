@@ -26,10 +26,10 @@ export const getAllSellBooks = (category, currentPage = 1) => async (dispatch) =
     try {
         dispatch({ type: ALL_SELL_BOOK_REQUEST });
 
-        let link = `http://localhost:5000/api/v1/books?page=${currentPage}`;
+        let link = `https://book-store-server-iota.vercel.app/api/v1/books?page=${currentPage}`;
 
         if (category) {
-            link = `http://localhost:5000/api/v1/books?page=${currentPage}&category=${category}`;
+            link = `https://book-store-server-iota.vercel.app/api/v1/books?page=${currentPage}&category=${category}`;
         }
 
         const { data } = await axios.get(link);
@@ -52,7 +52,7 @@ export const postNewSellBook = (sellBookData) => async (dispatch) => {
 
         dispatch({ type: NEW_SELL_BOOK_REQUEST })
         console.log(sellBookData)
-        const data = await axios.post(`http://localhost:5000/api/v1/book/sell`, sellBookData)
+        const data = await axios.post(`https://book-store-server-iota.vercel.app/api/v1/book/sell`, sellBookData)
         dispatch({
             type: NEW_SELL_BOOK_SUCCESS,
             payload: data
@@ -70,7 +70,7 @@ export const getSingleSellBookDetails = (id) => async (dispatch) => {
     try {
 
         dispatch({ type: NEW_SELL_DETAILS_REQUEST })
-        const { data } = await axios.get(`http://localhost:5000/api/v1/book/${id}`)
+        const { data } = await axios.get(`https://book-store-server-iota.vercel.app/api/v1/book/${id}`)
         dispatch({
             type: NEW_SELL_DETAILS_SUCCESS,
             payload: data.book
@@ -90,7 +90,7 @@ export const getAdminProduct = () => async (dispatch) => {
 
     try {
         dispatch({ type: ADMIN_SELL_BOOK_REQUEST })
-        const { data } = await axios.get(`http://localhost:5000/api/v1/books/admin`)
+        const { data } = await axios.get(`https://book-store-server-iota.vercel.app/api/v1/books/admin`)
         dispatch({
             type: ADMIN_SELL_BOOK_SUCCESS,
             payload: data.books,
@@ -113,7 +113,7 @@ export const deleteProduct = (id) => async (dispatch) => {
         dispatch({
             type: DELETE_SELL_BOOK_REQUEST
         })
-        const { data } = await axios.delete(`http://localhost:5000/api/v1/book/${id}`)
+        const { data } = await axios.delete(`https://book-store-server-iota.vercel.app/api/v1/book/${id}`)
         dispatch({
             type: DELETE_SELL_BOOK_SUCCESS,
             payload: data.success
@@ -131,7 +131,7 @@ export const deleteProduct = (id) => async (dispatch) => {
 export const updateProduct = (id, productData) => async (dispatch) => {
     try {
         dispatch({ type: UPDATE_SELL_BOOK_REQUEST })
-        const { data } = await axios.put(`http://localhost:5000/api/v1/book/${id}`, productData)
+        const { data } = await axios.put(`https://book-store-server-iota.vercel.app/api/v1/book/${id}`, productData)
         dispatch({
             type: UPDATE_SELL_BOOK_SUCCESS,
             payload: data.success,

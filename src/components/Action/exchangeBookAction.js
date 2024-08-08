@@ -25,9 +25,9 @@ export const getAllExchangeBooks = (category, currentPage) => async (dispatch) =
             type: ALL_EXCHANGE_BOOK_REQUEST
         })
 
-        let link = `http://localhost:5000/api/v1/exchangebooks?page=${currentPage}`
+        let link = `https://book-store-server-iota.vercel.app/api/v1/exchangebooks?page=${currentPage}`
         if (category) {
-            link = `http://localhost:5000/api/v1/exchangebooks?page=${currentPage}&category=${category}`
+            link = `https://book-store-server-iota.vercel.app/api/v1/exchangebooks?page=${currentPage}&category=${category}`
         }
 
         const { data } = await axios.get(link)
@@ -47,7 +47,7 @@ export const getAllExchangeBooks = (category, currentPage) => async (dispatch) =
 export const postNewExchangeBook = (exchangeBookData) => async (dispatch) => {
     try {
         dispatch({ type: NEW_EXCHANGE_BOOK_REQUEST })
-        const { data } = await axios.post(`http://localhost:5000/api/v1/exchangebook`, exchangeBookData)
+        const { data } = await axios.post(`https://book-store-server-iota.vercel.app/api/v1/exchangebook`, exchangeBookData)
         dispatch({
             type: NEW_EXCHANGE_BOOK_SUCCESS,
             payload: data
@@ -65,7 +65,7 @@ export const getExchangeBookDetails = (id) => async (dispatch) => {
 
     try {
         dispatch({ type: NEW_EXCHANGE_DETAILS_REQUEST })
-        const { data } = await axios.get(`http://localhost:5000/api/v1/exchange/${id}`)
+        const { data } = await axios.get(`https://book-store-server-iota.vercel.app/api/v1/exchange/${id}`)
         dispatch({
             type: NEW_EXCHANGE_DETAILS_SUCCESS,
             payload: data.exchangeBook,
@@ -85,7 +85,7 @@ export const getAdminExchange = () => async (dispatch) => {
 
     try {
         dispatch({ type: ADMIN_EXCHANGE_BOOK_REQUEST })
-        const { data } = await axios.get(`http://localhost:5000/api/v1/admin/exchangebook`)
+        const { data } = await axios.get(`https://book-store-server-iota.vercel.app/api/v1/admin/exchangebook`)
         dispatch({
             type: ADMIN_EXCHANGE_BOOK_SUCCESS,
             payload: data.exchangeBooks,
@@ -107,7 +107,7 @@ export const deleteExchangeBook = (id) => async (dispatch) => {
         dispatch({
             type: DELETE_EXCHANGE_BOOK_REQUEST
         })
-        const { data } = await axios.delete(`http://localhost:5000/api/v1/exchange/${id}`)
+        const { data } = await axios.delete(`https://book-store-server-iota.vercel.app/api/v1/exchange/${id}`)
         dispatch({
             type: DELETE_EXCHANGE_BOOK_SUCCESS,
             payload: data.success
