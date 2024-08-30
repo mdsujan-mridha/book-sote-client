@@ -18,9 +18,9 @@ Check out the live demo of the application [here](https://book-sote-client.verce
 ## Screenshots
 
 ![Home Page](https://github.com/mdsujan-mridha/book-sote-client/blob/main/src/images/book-shop.png)
-![Exchange Books Page](path-to-your-screenshot)
-![Request Books Page](path-to-your-screenshot)
-![Sell Books Page](path-to-your-screenshot)
+![Exchange Books Page](https://github.com/mdsujan-mridha/book-sote-client/blob/main/src/images/exchange-book.png)
+![Request Books Page](https://github.com/mdsujan-mridha/book-sote-client/blob/main/src/images/book-request.png)
+![Sell Books Page](https://github.com/mdsujan-mridha/book-sote-client/blob/main/src/images/buy-book.png)
 
 ## Installation
 
