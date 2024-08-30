@@ -13,11 +13,11 @@ Book Share is a web application built using the MERN stack (MongoDB, Express, Re
 
 ## Live Demo
 
-Check out the live demo of the application [here](your-live-demo-link).
+Check out the live demo of the application [here](https://book-sote-client.vercel.app/).
 
 ## Screenshots
 
-![Home Page](path-to-your-screenshot)
+![Home Page](src\images\book-shop.png)
 ![Exchange Books Page](path-to-your-screenshot)
 ![Request Books Page](path-to-your-screenshot)
 ![Sell Books Page](path-to-your-screenshot)
@@ -32,17 +32,38 @@ To run this project locally, follow these steps:
    ```
 2. Navigate to the project directory:
  ```bash
- cd book-share
+ cd book-sote-client
 ``` 
 3. Install dependencies for the server:
  ```bash
-    && cd client && npm install
+     npm install
  ```
 4.Start the development server:
 ```
 bash
     npm run dev
 ```
+### Now follow these steps for server site:
+ 1.Clone the repository:
+ ```bash
+     git clone https://github.com/mdsujan-mridha/book-store-server.git
+```
+2. Navigate to the project directory:
+ ```bash
+ cd book-store-server
+ ```
+ 3. Install dependencies:
+ ```bash
+ npm install
+ ```
+ 4.Start the development server:
+ ```bash
+ nodemon index.js
+ ```
+
+# Server site GitHub Link:
+[here](https://github.com/mdsujan-mridha/book-store-server.git).
+
 # Contributing
 Contributions are welcome! Please fork this repository and submit a pull request for any features, improvements, or bug fixes.
 # License
