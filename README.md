@@ -17,7 +17,7 @@ Check out the live demo of the application [here](https://book-sote-client.verce
 
 ## Screenshots
 
-![Home Page](https://drive.google.com/file/d/1NF0lSVE0OZQRCPws10XIEHoJugg8GVhJ/view?usp=sharing)
+![Home Page](https://github.com/mdsujan-mridha/book-sote-client/blob/main/src/images/book-shop.png)
 ![Exchange Books Page](path-to-your-screenshot)
 ![Request Books Page](path-to-your-screenshot)
 ![Sell Books Page](path-to-your-screenshot)
